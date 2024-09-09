@@ -1,17 +1,34 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import "./index.css";
-import { ClerkProvider } from "@clerk/clerk-react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import RootLayout from "./layouts/root-layout";
+import DashboardLayout from "./layouts/dashboard-layout";
+import IndexPage from "./routes/index";
+import ContactPage from "./routes/Contact";
+import SignInPage from "./routes/Sign-in";
+import SignUpPage from "./routes/Sign-up";
+import DashboardPage from "./routes/Dashboard";
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key");
-}
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <App />
-    </ClerkProvider>
-  </StrictMode>
+const router = createBrowserRouter([
+  {
+    element: <RootLayout />,
+    children: [
+      { path: "/", element: <IndexPage /> },
+      { path: "/contact", element: <ContactPage /> },
+      { path: "/sign-in/*", element: <SignInPage /> },
+      { path: "/sign-up/*", element: <SignUpPage /> },
+      {
+        element: <DashboardLayout />,
+        path: "dashboard",
+        children: [{ path: "/dashboard", element: <DashboardPage /> }],
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
