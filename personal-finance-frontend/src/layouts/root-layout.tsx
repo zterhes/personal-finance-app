@@ -23,9 +23,6 @@ export default function RootLayout() {
     >
       <header className="header">
         <div>
-          <div>
-            <p>Personal Finance</p>
-          </div>
           <SignedIn>
             <UserButton />
           </SignedIn>

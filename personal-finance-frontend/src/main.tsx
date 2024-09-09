@@ -8,6 +8,7 @@ import ContactPage from "./routes/Contact";
 import SignInPage from "./routes/Sign-in";
 import SignUpPage from "./routes/Sign-up";
 import DashboardPage from "./routes/Dashboard";
+import { AuthenticationLayout } from "./layouts/authentication-layout";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
         children: [{ index: true, element: <DashboardPage /> }],
       },
       { path: "/contact", element: <ContactPage /> },
-      { path: "/sign-in/*", element: <SignInPage /> },
+      {
+        path: "/sign-in/*",
+        element: <AuthenticationLayout />,
+        children: [{ index: true, element: <SignInPage /> }],
+      },
       { path: "/sign-up/*", element: <SignUpPage /> },
     ],
   },
