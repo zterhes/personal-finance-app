@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/root-layout";
-import DashboardLayout from "./layouts/dashboard-layout";
+import AuthenticatedLayout from "./layouts/authenticated-layout";
 import IndexPage from "./routes/index";
 import ContactPage from "./routes/Contact";
 import SignInPage from "./routes/Sign-in";
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       { path: "/sign-in/*", element: <SignInPage /> },
       { path: "/sign-up/*", element: <SignUpPage /> },
       {
-        element: <DashboardLayout />,
+        element: <AuthenticatedLayout />,
         path: "dashboard",
         children: [{ path: "/dashboard", element: <DashboardPage /> }],
       },
