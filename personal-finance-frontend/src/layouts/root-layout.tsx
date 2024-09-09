@@ -1,4 +1,4 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import {
   ClerkProvider,
   SignedIn,
@@ -23,15 +23,10 @@ export default function RootLayout() {
     >
       <header className="header">
         <div>
-          <div>
-            <p>Personal Finance</p>
-          </div>
           <SignedIn>
             <UserButton />
           </SignedIn>
-          <SignedOut>
-            <Link to="/sign-in">Sign In</Link>
-          </SignedOut>
+          <SignedOut />
         </div>
       </header>
       <main>

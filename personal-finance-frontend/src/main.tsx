@@ -3,25 +3,32 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/root-layout";
-import DashboardLayout from "./layouts/dashboard-layout";
-import IndexPage from "./routes/index";
+import AuthenticatedLayout from "./layouts/authenticated-layout";
 import ContactPage from "./routes/Contact";
 import SignInPage from "./routes/Sign-in";
 import SignUpPage from "./routes/Sign-up";
 import DashboardPage from "./routes/Dashboard";
+import { AuthenticationLayout } from "./layouts/authentication-layout";
 
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
     children: [
-      { path: "/", element: <IndexPage /> },
-      { path: "/contact", element: <ContactPage /> },
-      { path: "/sign-in/*", element: <SignInPage /> },
-      { path: "/sign-up/*", element: <SignUpPage /> },
       {
-        element: <DashboardLayout />,
-        path: "dashboard",
-        children: [{ path: "/dashboard", element: <DashboardPage /> }],
+        element: <AuthenticatedLayout />,
+        path: "/",
+        children: [{ index: true, element: <DashboardPage /> }],
+      },
+      { path: "/contact", element: <ContactPage /> },
+      {
+        path: "/sign-in/*",
+        element: <AuthenticationLayout />,
+        children: [{ index: true, element: <SignInPage /> }],
+      },
+      {
+        path: "sign-up/*",
+        element: <AuthenticationLayout />,
+        children: [{ index: true, element: <SignUpPage /> }],
       },
     ],
   },
