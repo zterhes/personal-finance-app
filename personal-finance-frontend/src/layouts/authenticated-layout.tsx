@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useAuth } from "@clerk/clerk-react";
 import { Outlet, useNavigate } from "react-router-dom";
+import SideBar from "../components/sidebar/SideBar";
 
 export default function DashboardLayout() {
   const { userId, isLoaded } = useAuth();
@@ -14,5 +15,10 @@ export default function DashboardLayout() {
 
   if (!isLoaded) return "Loading...";
 
-  return <Outlet />;
+  return (
+    <div className="md:flex">
+      <SideBar />
+      <Outlet />
+    </div>
+  );
 }

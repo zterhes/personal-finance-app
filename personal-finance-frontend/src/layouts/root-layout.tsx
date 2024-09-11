@@ -23,9 +23,7 @@ export default function RootLayout() {
     >
       <header className="header">
         <div>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+          <SignedIn></SignedIn>
           <SignedOut />
         </div>
       </header>
