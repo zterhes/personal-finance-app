@@ -1,7 +1,7 @@
 import logo from "../../assets/logo-large.svg";
 import smallLogo from "../../assets/logo-small.svg";
 import sideBarData from "../../lib/sideBarData";
-import SideBarItem from "./SideBarItem";
+import SideBarItem from "./VerticalSideBarItem";
 import minizeIcon from "../../assets/icons/icon-minimize-menu.svg";
 import { useState } from "react";
 

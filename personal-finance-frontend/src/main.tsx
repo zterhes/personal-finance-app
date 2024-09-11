@@ -4,7 +4,6 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/root-layout";
 import AuthenticatedLayout from "./layouts/authenticated-layout";
-import ContactPage from "./routes/Contact";
 import SignInPage from "./routes/Sign-in";
 import SignUpPage from "./routes/Sign-up";
 import DashboardPage from "./routes/Dashboard";

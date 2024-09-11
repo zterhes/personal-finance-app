@@ -1,7 +1,13 @@
-import DesktopSideBar from "./DesktopSideBar";
+import VerticalSideBar from "./VerticalSideBar";
+import HorizontalSideBar from "./HorizontalSideBar";
 
 const SideBar = () => {
-  return <DesktopSideBar className=" max-md:hidden" />;
+  return (
+    <>
+      <VerticalSideBar className=" max-lg:hidden" />
+      <HorizontalSideBar className="lg:hidden" />
+    </>
+  );
 };
 
 export default SideBar;
