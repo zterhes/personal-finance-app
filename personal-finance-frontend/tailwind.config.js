@@ -12,8 +12,10 @@ export default {
           500: "#98908B",
         },
         grey: {
+          300: "#B3B3B3",
           900: "#201F24",
         },
+        green: "#277C78",
       },
       fontSize: {
         "text-preset-1": "32px",

@@ -4,11 +4,14 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/root-layout";
 import AuthenticatedLayout from "./layouts/authenticated-layout";
-import ContactPage from "./routes/Contact";
 import SignInPage from "./routes/Sign-in";
 import SignUpPage from "./routes/Sign-up";
 import DashboardPage from "./routes/Dashboard";
 import { AuthenticationLayout } from "./layouts/authentication-layout";
+import Transactions from "./routes/Transactions";
+import Budgets from "./routes/Budgets";
+import Pots from "./routes/Pots";
+import RecurringBills from "./routes/RecurringBills";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +22,23 @@ const router = createBrowserRouter([
         path: "/",
         children: [{ index: true, element: <DashboardPage /> }],
       },
-      { path: "/contact", element: <ContactPage /> },
+      {
+        element: <AuthenticatedLayout />,
+        children: [{ path: "/transactions", element: <Transactions /> }],
+      },
+      {
+        element: <AuthenticatedLayout />,
+        children: [{ path: "/budgets", element: <Budgets /> }],
+      },
+      {
+        element: <AuthenticatedLayout />,
+        children: [{ path: "/pots", element: <Pots /> }],
+      },
+      {
+        element: <AuthenticatedLayout />,
+        children: [{ path: "/recurring-bills", element: <RecurringBills /> }],
+      },
+
       {
         path: "/sign-in/*",
         element: <AuthenticationLayout />,
