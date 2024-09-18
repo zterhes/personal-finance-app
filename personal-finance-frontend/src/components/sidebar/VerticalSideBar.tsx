@@ -4,6 +4,7 @@ import sideBarData from "../../lib/sideBarData";
 import SideBarItem from "./VerticalSideBarItem";
 import minizeIcon from "../../assets/icons/icon-minimize-menu.svg";
 import { useState } from "react";
+import { UserButton } from "@clerk/clerk-react";
 
 type Props = {
   className?: string;
@@ -15,7 +16,7 @@ const DesktopSideBar: React.FC<Props> = ({ className }) => {
   return (
     <div
       className={`${className} ${
-        isOpen ? `w-1/5` : `w-1/12`
+        isOpen ? `w-[300px]` : `w-[88px]`
       } h-screen bg-gray-900 rounded-r-lg`}
     >
       <div className=" px-400 py-500 mb-300">
