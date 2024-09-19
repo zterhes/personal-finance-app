@@ -18,7 +18,9 @@ export default function DashboardLayout() {
   return (
     <div className="md:flex">
       <SideBar />
-      <Outlet />
+      <div className="px-500 py-400 w-full bg-beige-100">
+        <Outlet />
+      </div>
     </div>
   );
 }
