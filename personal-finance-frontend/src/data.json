@@ -410,12 +410,42 @@
       "theme": "#82C9D7"
     },
     {
+      "category": "Groceries",
+      "maximum": 100.0,
+      "theme": "#626070"
+    },
+    {
       "category": "Dining Out",
       "maximum": 75.0,
       "theme": "#F2CDAC"
     },
     {
+      "category": "Transportation",
+      "maximum": 100.0,
+      "theme": "#626070"
+    },
+    {
       "category": "Personal Care",
+      "maximum": 100.0,
+      "theme": "#626070"
+    },
+    {
+      "category": "Education",
+      "maximum": 100.0,
+      "theme": "#626070"
+    },
+    {
+      "category": "Lifestyle",
+      "maximum": 100.0,
+      "theme": "#626070"
+    },
+    {
+      "category": "Shopping",
+      "maximum": 100.0,
+      "theme": "#626070"
+    },
+    {
+      "category": "General",
       "maximum": 100.0,
       "theme": "#626070"
     }

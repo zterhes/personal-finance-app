@@ -1,8 +1,6 @@
 import data from "../data.json";
 
 function fetchTransactions({ pageParam }: { pageParam: number }) {
-  console.log("pageParam", pageParam);
-
   const itemsPerPage = 10;
   const transactions = data.transactions;
 
@@ -18,4 +16,8 @@ function fetchTransactions({ pageParam }: { pageParam: number }) {
   return currentItems;
 }
 
-export { fetchTransactions };
+function fetchBudgetNames() {
+  return data.budgets.map((budget) => budget.category);
+}
+
+export { fetchTransactions, fetchBudgetNames };
