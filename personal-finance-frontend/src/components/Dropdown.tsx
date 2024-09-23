@@ -8,14 +8,12 @@ type Props = {
     title: string;
     logicalPlaceholder: string;
   }[];
-  divWidth: string;
   buttonWidth: string;
 };
 const Dropdown: React.FC<Props> = ({
   label,
   placeholder,
   values,
-  divWidth,
   buttonWidth,
 }) => {
   return (
@@ -26,7 +24,6 @@ const Dropdown: React.FC<Props> = ({
       <Menu
         as="div"
         className={
-          divWidth +
           " inline-block h-[45px] items-center space-x-100 relative text-left"
         }
       >

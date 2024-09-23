@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import PageHeader from "../components/PageHeader";
 import SearchBar from "../components/searchBar/SearchBar";
 import { fetchTransactions } from "../state/transactions";
@@ -41,7 +41,7 @@ const Transactions = () => {
     </div>
   ) : error ? (
     <div className="w-full h-full flex justify-center items-center">
-      <p>Error</p>
+      <p>{error.message}</p>
     </div>
   ) : (
     <div>

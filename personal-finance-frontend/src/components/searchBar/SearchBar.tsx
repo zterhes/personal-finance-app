@@ -44,7 +44,6 @@ const SearchBar = () => {
           label="Sort by"
           placeholder="Latest"
           values={sortByValues}
-          divWidth="w-[169px]"
           buttonWidth="113px"
         />
         <Dropdown
@@ -55,7 +54,6 @@ const SearchBar = () => {
               ? data.map((name) => ({ title: name, logicalPlaceholder: name }))
               : []
           }
-          divWidth="w-[245px]"
           buttonWidth="177px"
         />
       </div>
