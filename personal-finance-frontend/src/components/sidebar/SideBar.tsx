@@ -4,7 +4,7 @@ import HorizontalSideBar from "./HorizontalSideBar";
 const SideBar = () => {
   return (
     <>
-      <VerticalSideBar className=" max-lg:hidden" />
+      <VerticalSideBar className=" max-lg:hidden sticky top-0" />
       <HorizontalSideBar className="lg:hidden" />
     </>
   );
