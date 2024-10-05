@@ -1,13 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
-import Dropdown from "../Dropdown";
 import SearchTextInput from "./SearchTextInput";
 import { fetchBudgetNames } from "../../state/transactions";
+import { useState } from "react";
+import MySelect from "../MySelect";
 
 const SearchBar = () => {
   const { data } = useQuery({
     queryKey: ["budgetNames"],
     queryFn: fetchBudgetNames,
   });
+
+  const [sortValue, setSortValue] = useState("latest");
+  const [categoryValue, setCategoryValue] = useState("all");
+  console.log("sortValue", sortValue);
+  console.log("categoryValue", categoryValue);
 
   const sortByValues: { title: string; logicalPlaceholder: string }[] = [
     {
@@ -40,20 +46,18 @@ const SearchBar = () => {
     <div className="h-[45px] w-full flex justify-between align-middle">
       <SearchTextInput />
       <div className="flex space-x-300">
-        <Dropdown
+        <MySelect
           label="Sort by"
-          placeholder="Latest"
-          values={sortByValues}
+          sortValue={sortValue}
+          setSortValue={setSortValue}
+          sortByValues={sortByValues}
           buttonWidth="113px"
         />
-        <Dropdown
+        <MySelect
           label="Category"
-          placeholder="All Transactions"
-          values={
-            data
-              ? data.map((name) => ({ title: name, logicalPlaceholder: name }))
-              : []
-          }
+          sortValue={categoryValue}
+          setSortValue={setCategoryValue}
+          sortByValues={data || []}
           buttonWidth="177px"
         />
       </div>

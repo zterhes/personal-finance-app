@@ -17,7 +17,12 @@ function fetchTransactions({ pageParam }: { pageParam: number }) {
 }
 
 function fetchBudgetNames() {
-  return data.budgets.map((budget) => budget.category);
+  return data.budgets.map((budget) => {
+    return {
+      title: budget.category,
+      logicalPlaceholder: budget.category.toLowerCase().replace(/\s+/g, ""),
+    };
+  });
 }
 
 export { fetchTransactions, fetchBudgetNames };

@@ -27,7 +27,7 @@ const Transactions = () => {
       },
     });
 
-  const { ref, inView, entry } = useInView();
+  const { ref, inView } = useInView();
 
   useEffect(() => {
     if (inView && hasNextPage) {
