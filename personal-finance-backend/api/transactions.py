@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restx import Api, Resource, fields
 from server.instance import server
-from service.transaction_service_mock import TransactionService
+from service.transaction_service import TransactionService
 
 transaction_service = TransactionService()
 
@@ -12,4 +12,4 @@ api = server.api
 @api.route("/transactions")
 class Transactions(Resource):
     def get(self):
-        return {"transactions": []}
+        return transaction_service.get_transactions()
