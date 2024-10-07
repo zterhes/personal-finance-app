@@ -1,7 +1,7 @@
-from flask import Flask
+import sys, os
+from server.instance import server
+from api.transactions import *
 
-app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+if __name__ == "__main__":
+    server.run()
