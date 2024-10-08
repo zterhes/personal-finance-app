@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restx import Api, Resource, fields
+from flask_restx import Resource
 from server.instance import server
 from service.transaction_service import TransactionService
 

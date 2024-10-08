@@ -1,6 +1,4 @@
-import json
 from repository.dao.TransactionDAO import TransactionDAO
-from flask import jsonify
 
 
 class TransactionService:

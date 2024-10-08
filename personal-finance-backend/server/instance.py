@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restx import Api, Resource, fields
+from flask_restx import Api
 from environment.configuration import environment_config
 
 
