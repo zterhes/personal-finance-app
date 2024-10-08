@@ -1,3 +1,4 @@
+from math import log
 import string
 from clerk_backend_api import Clerk
 from flask import request, jsonify
@@ -23,7 +24,7 @@ class AuthProvider:
         try:
             return clerk.sessions.get(session_id=session_id)
         except Exception as e:
-            print("error ", e)
+            logging.error(e)
             return jsonify({"error": str(e)}), 401
 
 
